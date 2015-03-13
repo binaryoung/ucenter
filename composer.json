@@ -1,0 +1,28 @@
+{
+    "name": "binaryoung/ucenter",
+    "description": "ucenter client for laravel",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "young",
+            "email": "admin@binaryoung.com",
+            "homepage": "http://binaryoung.com",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Binaryoung\\Ucenter\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=5.5.0"
+    },
+    "require-dev": {
+        "mockery/mockery": "0.9.*",
+        "phpunit/phpunit": "4.2.*"
+    },
+    "suggest": {
+        "illuminate/support": "Laravel integration"
+    }
+}
