@@ -1,6 +1,7 @@
 <?php namespace Binaryoung\Ucenter\Contracts;
 
-interface Api {
+interface Api
+{
 
 
     public static function test();
@@ -30,6 +31,4 @@ interface Api {
     public static function updatecredit($get, $post);
 
     public static function getcredit($get, $post);
-
-
 }
