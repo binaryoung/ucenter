@@ -9,7 +9,7 @@ return [
     'dbcharset' 	=> env('UC_DBCHARSET', 'utf8'),
     'dbtablepre' 	=> env('UC_DBTABLEPRE', 'uc_'),
     'dbconnect' 	=> env('UC_DBCONNECT', '0'),
-    'key' 			=> env('UC_KEY', '6bc3bbKaoWnVrb26juVvk4uq4c2a5SNQvzv70Zs'),
+    'key' 			=> env('UC_KEY', '666cLXgFsrl6TcvDflhrvdcziY8SnhP1eexl1eQ'),
     'api' 			=> env('UC_API', 'http://localhost/ucenter'),
     'ip' 			=> env('UC_IP', '127.0.0.1'),
     'charset' 		=> env('UC_CHARSET', 'utf-8'),

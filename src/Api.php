@@ -27,8 +27,9 @@ define('UC_KEY',Config::get('ucenter.key'));
 
 define('API_ROOT', __DIR__.'/');
 
-class Api{
-	public static function execute()
+class Api implements Contracts\Api{
+
+	public static function init()
 	{
 		$get = $post = array();
 		$code = isset($_GET['code'])?trim($_GET['code']):'';
@@ -70,10 +71,12 @@ class Api{
 			return API_RETURN_FAILED;
 		}
 	}
-	public static function test($get,$post)
+	
+	public static function test()
 	{
 		return API_RETURN_SUCCEED;
 	}
+	
 	public static function deleteuser($get, $post)
 	{
 		$uids = $get['ids'];
