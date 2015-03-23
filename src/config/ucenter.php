@@ -7,7 +7,7 @@ return [
     'dbpw'            => env('UC_DBPW', 'root'),
     'dbname'        => env('UC_DBNAME', 'ucenter'),
     'dbcharset'    => env('UC_DBCHARSET', 'utf8'),
-    'dbtablepre'    => env('UC_DBTABLEPRE', 'uc_'),
+    'dbtablepre'    => env('UC_DBTABLEPRE', '`uc`.uc_'),
     'dbconnect'    => env('UC_DBCONNECT', '0'),
     'key'            => env('UC_KEY', '666cLXgFsrl6TcvDflhrvdcziY8SnhP1eexl1eQ'),
     'api'            => env('UC_API', 'http://localhost/ucenter'),
