@@ -11,7 +11,7 @@ if (!defined('UC_API')) {
     define('UC_DBNAME', $config['dbname']);
     define('UC_DBCONNECT', $config['dbconnect']);
     define('UC_DBCHARSET', $config['dbcharset']);
-    define('UC_DBTABLEPRE', "`${config['dbname']}`.${config['dbtablepre']}");
+    define('UC_DBTABLEPRE', $config['dbtablepre']);
     define('UC_KEY', $config['key']);
     define('UC_API', $config['api']);
     define('UC_CHARSET', $config['charset']);
