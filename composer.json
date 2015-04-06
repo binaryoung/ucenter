@@ -24,10 +24,5 @@
     },
     "suggest": {
         "illuminate/support": "Laravel integration"
-    },
-    "scripts": {
-        "post-package-install": [
-            "php artisan vendor:publish"
-        ]
     }
 }
