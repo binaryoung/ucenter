@@ -32,7 +32,7 @@ Ucenter Service Provider For Laravel5
 ~~~
 'aliases' => array(
 
-    'Binaryoung' => 'Binaryoung\Ucenter\Facades\Ucenter'
+    'Ucenter' => 'Binaryoung\Ucenter\Facades\Ucenter'
 
 )
 ~~~
