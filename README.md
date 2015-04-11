@@ -62,8 +62,8 @@ ucenter配置项
 ~~~
 
 ## 使用
-例如：获取用户
-~~~名为test的信息
+例如：获取用户名为test的信息
+~~~
 $result = Ucenter::uc_get_user(['test']);
 var_dump($result);
 ~~~
