@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'url'           => env('UC_URL', 'localhost'),
     'connect'        => env('UC_CONNECT', 'mysql'),
     'dbhost'        => env('UC_DBHOST', 'localhost'),
     'dbuser'        => env('UC_DBUSER', 'root'),
