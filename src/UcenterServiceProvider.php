@@ -32,6 +32,6 @@ class UcenterServiceProvider extends ServiceProvider
             return new Ucenter;
         });
 
-        $this->app->bind('Binaryoung\Ucenter\Contracts\Api', 'Binaryoung\Ucenter\Services\Api');
+        $this->app->bind('Binaryoung\Ucenter\Contracts\Api', config('ucenter.service'));
     }
 }
