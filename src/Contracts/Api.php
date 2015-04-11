@@ -3,8 +3,7 @@
 interface Api
 {
 
-
-    public static function test();
+    public static function test($get, $post);
 
     public static function deleteuser($get, $post);
 
@@ -29,6 +28,10 @@ interface Api
     public static function updatesmsapi($get, $post);
 
     public static function updatecredit($get, $post);
+
+    public static function getcreditsettings($get, $post);
+
+    public static function updatecreditsettings($get, $post);
 
     public static function getcredit($get, $post);
 }
