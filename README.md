@@ -53,18 +53,18 @@ ucenter配置项
 'dbpw'		=> 'root', // UCenter 数据库密码
 'dbname'	=> 'ucenter', // UCenter 数据库名称
 'dbcharset'	=> 'utf8',// UCenter 数据库字符集
-'dbtablepre'=> 'uc_', // UCenter 数据库表前缀
-'key'		=> '6bc3bbKaoWnVrb26juVvk4uq4c2a5SNQvzv70Zs', // 与 UCenter 的通信密钥, 要与 UCenter 保持一致
+'dbtablepre'=> '`uc`.uc_', // UCenter 数据库表前缀
+'key'		=> '666cLXgFsrl6TcvDflhrvdcziY8SnhP1eexl1eQ', // 与 UCenter 的通信密钥, 要与 UCenter 保持一致
 'charset'	=> 'utf-8', // UCenter 的字符集
 'ip'		=> '127.0.0.1', // UCenter 的 IP, 当 UC_CONNECT 为非 mysql 方式时, 并且当前应用服务器解析域名有问题时, 请设置此值
-'appid'		=> 5, //当前应用的 ID
+'appid'		=> 1, //当前应用的 ID
 'ppp'		=> 20, //当前应用的 ID
 ~~~
 
 ## 使用
 例如：获取用户
-~~~名为wen的信息
-$result = Ucenter::uc_get_user(['wen']);
+~~~名为test的信息
+$result = Ucenter::uc_get_user(['test']);
 var_dump($result);
 ~~~
 
