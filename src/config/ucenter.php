@@ -16,4 +16,5 @@ return [
     'charset'        => env('UC_CHARSET', 'utf-8'),
     'appid'        => env('UC_APPID', '1'),
     'ppp'            => env('UC_PPP', '20'),
+    'service'       =>  env('UC_SERVICE', 'Binaryoung\Ucenter\Services\Api'),
 ];
