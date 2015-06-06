@@ -134,7 +134,7 @@ class Api implements \Binaryoung\Ucenter\Contracts\Api
     public static function updateclient()
     {
 
-        $cachefile = API_ROOT.'./uc_client/data/cache/settings.php';
+        $cachefile = API_ROOT.'uc_client/data/cache/settings.php';
         $fp = @fopen($cachefile, 'w');
         $s = "<?php\r\n";
         $s .= '$_CACHE[\'settings\'] = '.var_export($this->post, true).";\r\n";
