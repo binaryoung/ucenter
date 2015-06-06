@@ -2,9 +2,6 @@
 
 interface Api
 {
-    public $get = [];
-
-    public $post = [];
    
     public static function test();
 
