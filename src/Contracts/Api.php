@@ -9,13 +9,13 @@ interface Api
 
     public static function renameuser($get, $post);
 
+    public static function updatepw($get, $post);
+
     public static function gettag($get, $post);
 
     public static function synlogin($get, $post);
 
     public static function synlogout($get, $post);
-
-    public static function updatepw($get, $post);
 
     public static function updatebadwords($get, $post);
 
@@ -24,8 +24,6 @@ interface Api
     public static function updateapps($get, $post);
 
     public static function updateclient($get, $post);
-
-    public static function updatesmsapi($get, $post);
 
     public static function updatecredit($get, $post);
 
