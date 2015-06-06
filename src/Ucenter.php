@@ -21,11 +21,15 @@ if (!defined('UC_API')) {
     include __DIR__.'/uc_client/client.php';
 }
     
-    class Ucenter
-    {
+class Ucenter
+{
 
-        public function __call($func, $arguments)
-        {
-            return call_user_func_array($func, $arguments);
+    public function __call($function, $arguments)
+    {
+        if (function_exists($function)) {
+            call_user_func_array($function, $arguments);
+        } else {
+            throw new Exception("function not exists");           
         }
     }
+}

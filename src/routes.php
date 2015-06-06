@@ -1,2 +1,3 @@
 <?php
-    Route::any(config('ucenter.url').'/api/uc.php', '\Binaryoung\Ucenter\Controllers\ApiController@init');
+
+Route::any(config('ucenter.url').'/api/'.config('ucenter.apifilename'), '\Binaryoung\Ucenter\Controllers\ApiController@run');
