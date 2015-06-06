@@ -27,7 +27,7 @@ class Ucenter
     public function __call($function, $arguments)
     {
         if (function_exists($function)) {
-            call_user_func_array($function, $arguments);
+            return call_user_func_array($function, $arguments);
         } else {
             throw new Exception("function not exists");           
         }

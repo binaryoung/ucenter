@@ -5,52 +5,66 @@ use Binaryoung\Ucenter\Services\Help;
 class Api implements \Binaryoung\Ucenter\Contracts\Api
 {
     use Help;
+
+    public $get = [];
+
+    public $post = [];
     
-    public static function test($get, $post)
+    public static function test()
     {
         return API_RETURN_SUCCEED;
     }
     
-    public static function deleteuser($get, $post)
+    public static function deleteuser()
     {
-        $uids = $get['ids'];
-        if (! API_DELETEUSER) {
-            return API_RETURN_FORBIDDEN;
-        }
-        return API_RETURN_SUCCEED;
-    }
-    
-    public static function renameuser($get, $post)
-    {
-        $uid = $get['uid'];
-        $usernameold = $get['oldusername'];
-        $usernamenew = $get['newusername'];
-        if (!API_RENAMEUSER) {
-            return API_RETURN_FORBIDDEN;
-        }
+        $uids = $this->get['ids'];
+       
+        /*
+        同步删除用户代码
+         */
         
         return API_RETURN_SUCCEED;
     }
     
-    public static function gettag($get, $post)
+    public static function renameuser()
     {
-        $name = $get['id'];
-        if (!API_GETTAG) {
-            return API_RETURN_FORBIDDEN;
-        }
+        $uid = $this->get['uid'];
+        $oldusername = $this->get['oldusername'];
+        $newusername = $this->get['newusername'];
         
-        $return = array();
+        /*
+        同步重命名用户代码
+        */
+        
+        return API_RETURN_SUCCEED;
+    }
+
+    public static function updatepw()
+    {
+
+        $username = $this->get['username'];
+        $password = $this->get['password'];
+
+        /*
+        同步更新用户密码
+         */
+        
+        return API_RETURN_SUCCEED;
+    }
+
+    public static function gettag()
+    {
+        $name = $this->get['id'];
+        
+        $return = [];
         return self::serialize($return, 1);
     }
 
-    public static function synlogin($get, $post)
+    public static function synlogin()
     {
-        $uid = $get['uid'];
-        ;
-        $username = $get['username'];
-        if (!API_SYNLOGIN) {
-            return API_RETURN_FORBIDDEN;
-        }
+        $uid = $this->get['uid'];
+        //$username = $this->get['username'];
+
         /*
         
         同步登陆代码
@@ -59,11 +73,9 @@ class Api implements \Binaryoung\Ucenter\Contracts\Api
         return API_RETURN_SUCCEED;
     }
 
-    public static function synlogout($get, $post)
+    public static function synlogout()
     {
-        if (!API_SYNLOGOUT) {
-            return API_RETURN_FORBIDDEN;
-        }
+
         /*
         
         同步注销代码
@@ -72,26 +84,15 @@ class Api implements \Binaryoung\Ucenter\Contracts\Api
         return API_RETURN_SUCCEED;
     }
 
-    public static function updatepw($get, $post)
-    {
-        if (!API_UPDATEPW) {
-            return API_RETURN_FORBIDDEN;
-        }
-        $username = $get['username'];
-        $password = $get['password'];
-        return API_RETURN_SUCCEED;
-    }
 
-    public static function updatebadwords($get, $post)
+    public static function updatebadwords()
     {
-        if (!API_UPDATEBADWORDS) {
-            return API_RETURN_FORBIDDEN;
-        }
+
         $cachefile = API_ROOT.'uc_client/data/cache/badwords.php';
         $fp = fopen($cachefile, 'w');
         $data = array();
-        if (is_array($post)) {
-            foreach ($post as $k => $v) {
+        if (is_array($this->post)) {
+            foreach ($this->post as $k => $v) {
                 $data['findpattern'][$k] = $v['findpattern'];
                 $data['replace'][$k] = $v['replacement'];
             }
@@ -100,93 +101,91 @@ class Api implements \Binaryoung\Ucenter\Contracts\Api
         $s .= '$_CACHE[\'badwords\'] = '.var_export($data, true).";\r\n";
         fwrite($fp, $s);
         fclose($fp);
+        
         return API_RETURN_SUCCEED;
     }
 
-    public static function updatehosts($get, $post)
+    public static function updatehosts()
     {
-        if (!API_UPDATEHOSTS) {
-            return API_RETURN_FORBIDDEN;
-        }
+
         $cachefile = API_ROOT.'uc_client/data/cache/hosts.php';
         $fp = fopen($cachefile, 'w');
         $s = "<?php\r\n";
-        $s .= '$_CACHE[\'hosts\'] = '.var_export($post, true).";\r\n";
+        $s .= '$_CACHE[\'hosts\'] = '.var_export($this->post, true).";\r\n";
         fwrite($fp, $s);
         fclose($fp);
+        
         return API_RETURN_SUCCEED;
     }
 
-    public static function updateapps($get, $post)
+    public static function updateapps()
     {
-        if (!API_UPDATEAPPS) {
-            return API_RETURN_FORBIDDEN;
-        }
-        //note 写 app 缓存文件
+
         $cachefile = API_ROOT.'uc_client/data/cache/apps.php';
         $fp = fopen($cachefile, 'w');
         $s = "<?php\r\n";
-        $s .= '$_CACHE[\'apps\'] = '.var_export($post, true).";\r\n";
+        $s .= '$_CACHE[\'apps\'] = '.var_export($this->post, true).";\r\n";
         fwrite($fp, $s);
         fclose($fp);
+        
         return API_RETURN_SUCCEED;
     }
 
-    public static function updateclient($get, $post)
+    public static function updateclient()
     {
-        if (!API_UPDATECLIENT) {
-            return API_RETURN_FORBIDDEN;
-        }
+
         $cachefile = API_ROOT.'./uc_client/data/cache/settings.php';
         $fp = @fopen($cachefile, 'w');
         $s = "<?php\r\n";
-        $s .= '$_CACHE[\'settings\'] = '.var_export($post, true).";\r\n";
+        $s .= '$_CACHE[\'settings\'] = '.var_export($this->post, true).";\r\n";
         @fwrite($fp, $s);
         @fclose($fp);
+        
         return API_RETURN_SUCCEED;
     }
-    public static function updatesmsapi($get, $post)
+    
+    /*public static function updatesmsapi()
     {
-        if (!API_UPDATECLIENT) {
-            return API_RETURN_FORBIDDEN;
-        }
+
         $cachefile = API_ROOT.'./uc_client/data/cache/smsapi.php';
         $fp = @fopen($cachefile, 'w');
         $s = "<?php\r\n";
-        $s .= '$_CACHE[\'smsapi\'] = '.var_export($post, true).";\r\n";
+        $s .= '$_CACHE[\'smsapi\'] = '.var_export($this->post, true).";\r\n";
         @fwrite($fp, $s);
         @fclose($fp);
+        
+        return API_RETURN_SUCCEED;
+    }*/
+   
+    public static function updatecredit()
+    {
+
+        $credit = $this->get['credit'];
+        $amount = $this->get['amount'];
+        $uid = $this->get['uid'];
+        
         return API_RETURN_SUCCEED;
     }
-    public static function updatecredit($get, $post)
+
+    public static function getcreditsettings()
     {
-        if (!API_UPDATECREDIT) {
-            return API_RETURN_FORBIDDEN;
-        }
-        $credit = $get['credit'];
-        $amount = $get['amount'];
-        $uid = $get['uid'];
+
+        $credits = [];
+        return self::serialize($credits);
+    }
+
+    public static function updatecreditsettings()
+    {
+
+        $credit = $this->get['credit'];
         return API_RETURN_SUCCEED;
     }
 
-    public static function getcredit($get, $post)
+    public static function getcredit()
     {
-        if (!API_GETCREDIT) {
-            return API_RETURN_FORBIDDEN;
-        }
-    }
+        $uid = $this->get['uid'];
+        $credit = $this->get['credit'];
 
-    public static function getcreditsettings($get, $post)
-    {
-        if (!API_GETCREDIT) {
-            return API_RETURN_FORBIDDEN;
-        }
-    }
-
-    public static function updatecreditsettings($get, $post)
-    {
-        if (!API_GETCREDIT) {
-            return API_RETURN_FORBIDDEN;
-        }
+        return API_RETURN_SUCCEED;
     }
 }
