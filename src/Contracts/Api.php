@@ -3,33 +3,33 @@
 interface Api
 {
    
-    public static function test();
+    public  function test();
 
-    public static function deleteuser();
+    public  function deleteuser();
 
-    public static function renameuser();
+    public  function renameuser();
 
-    public static function updatepw();
+    public  function updatepw();
 
-    public static function gettag();
+    public  function gettag();
 
-    public static function synlogin();
+    public  function synlogin();
 
-    public static function synlogout();
+    public  function synlogout();
 
-    public static function updatebadwords();
+    public  function updatebadwords();
 
-    public static function updatehosts();
+    public  function updatehosts();
 
-    public static function updateapps();
+    public  function updateapps();
 
-    public static function updateclient();
+    public  function updateclient();
 
-    public static function updatecredit();
+    public  function updatecredit();
 
-    public static function getcreditsettings();
+    public  function getcreditsettings();
 
-    public static function updatecreditsettings();
+    public  function updatecreditsettings();
 
-    public static function getcredit();
+    public  function getcredit();
 }

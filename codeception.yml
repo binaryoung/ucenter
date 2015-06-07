@@ -11,7 +11,7 @@ settings:
 modules:
     config:
         Db:
-            dsn: ''
-            user: ''
-            password: ''
-            dump: tests/_data/dump.sql
+            dsn: 'mysql:host=localhost;dbname=ucenter'
+            user: 'root'
+            password: 'root'
+            dump: tests/_data/ucenter_dump.sql

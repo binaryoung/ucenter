@@ -11,16 +11,18 @@ class ApiController extends Controller
 
 	public function __construct()
 	{
-		define('UC_CLIENT_VERSION', '1.6.0');    //note UCenter 版本标识
-		define('UC_CLIENT_RELEASE', '20110501');
+        if (!defined('UC_KEY')) {
+    		define('UC_CLIENT_VERSION', '1.6.0');    //note UCenter 版本标识
+    		define('UC_CLIENT_RELEASE', '20110501');
 
-		define('API_RETURN_SUCCEED', 1);
-		define('API_RETURN_FAILED', -1);
-		define('API_RETURN_FORBIDDEN', -2);
+    		define('API_RETURN_SUCCEED', 1);
+    		define('API_RETURN_FAILED', -1);
+    		define('API_RETURN_FORBIDDEN', -2);
 
-		define('UC_KEY', Config::get('ucenter.key'));
+    		define('UC_KEY', Config::get('ucenter.key'));
 
-		define('API_ROOT', __DIR__.'/../');
+    		define('API_ROOT', __DIR__.'/../');
+        }
 	}
 
 	public function run(Api $api)
@@ -61,7 +63,7 @@ class ApiController extends Controller
             $api->get = $get;
             $api->post = $post;
 
-            return $api::$action();
+            return $api->$action();
         } else {
             return API_RETURN_FAILED;
         }
