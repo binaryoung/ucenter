@@ -4,6 +4,8 @@ Ucenter Service Provider For Laravel5
 
 [![Latest Stable Version](https://poser.pugx.org/binaryoung/ucenter/v/stable)](https://packagist.org/packages/binaryoung/ucenter) [![Total Downloads](https://poser.pugx.org/binaryoung/ucenter/downloads)](https://packagist.org/packages/binaryoung/ucenter) [![Latest Unstable Version](https://poser.pugx.org/binaryoung/ucenter/v/unstable)](https://packagist.org/packages/binaryoung/ucenter) [![License](https://poser.pugx.org/binaryoung/ucenter/license)](https://packagist.org/packages/binaryoung/ucenter)
 
+[![Build Status](https://travis-ci.org/binaryoung/ucenter.svg?branch=master)](https://travis-ci.org/binaryoung/ucenter)
+
 ### 安装
 
 - [Packagist](https://packagist.org/packages/binaryoung/ucenter)
