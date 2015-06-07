@@ -1,0 +1,31 @@
+<?php
+$_CACHE['settings'] = array (
+  'accessemail' => '',
+  'censoremail' => '',
+  'censorusername' => '',
+  'chatpmmemberlimit' => '35',
+  'chatpmthreadlimit' => '30',
+  'dateformat' => 'y-n-j',
+  'doublee' => '0',
+  'mailauth' => '1',
+  'mailauth_password' => 'password',
+  'mailauth_username' => 'username@21cn.com',
+  'maildefault' => 'username@21cn.com',
+  'maildelimiter' => '0',
+  'mailfrom' => 'UCenter <username@21cn.com>',
+  'mailport' => '25',
+  'mailsend' => '1',
+  'mailserver' => 'smtp.21cn.com',
+  'mailsilent' => '1',
+  'mailusername' => '1',
+  'nextnotetime' => '0',
+  'pmcenter' => '1',
+  'pmfloodctrl' => '15',
+  'pmsendregdays' => '0',
+  'privatepmthreadlimit' => '25',
+  'sendpmseccode' => '1',
+  'timeoffset' => '28800',
+  'version' => '1.6.0',
+);
+
+?>

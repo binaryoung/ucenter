@@ -1,8 +1,8 @@
-<?php namespace Binaryoung\Ucenter\Services;
+<?php
 
 use Binaryoung\Ucenter\Services\Help;
 
-class Api implements \Binaryoung\Ucenter\Contracts\Api
+class TestApiInterface implements \Binaryoung\Ucenter\Contracts\Api
 {
     use Help;
 
@@ -56,7 +56,15 @@ class Api implements \Binaryoung\Ucenter\Contracts\Api
     {
         $name = $this->get['id'];
         
-        $return = [];
+        $threadlist = [];
+        $threadlist[] = [
+            'name' => 'updatehosts',
+            'uid' => '1',
+            'username' => 'admin',
+            'url' => 'http://www.yourwebsite.com/thread.php?id=1',
+            'image' => 'http://www.yourwebsite.com/threadimage.php?id=1',
+        ];
+        $return = ['tag', $threadlist];
         return $this->serialize($return, 1);
     }
 
@@ -107,11 +115,17 @@ class Api implements \Binaryoung\Ucenter\Contracts\Api
 
     public  function updatehosts()
     {
-
+        $fakeData = [
+            'name' => 'updatehosts',
+            'uid' => '1',
+            'username' => 'admin',
+            'url' => 'http://www.yourwebsite.com/thread.php?id=1',
+            'image' => 'http://www.yourwebsite.com/threadimage.php?id=1',
+        ];
         $cachefile = API_ROOT.'uc_client/data/cache/hosts.php';
         $fp = fopen($cachefile, 'w');
         $s = "<?php\r\n";
-        $s .= '$_CACHE[\'hosts\'] = '.var_export($this->post, true).";\r\n";
+        $s .= '$_CACHE[\'hosts\'] = '.var_export($fakeData, true).";\r\n";
         fwrite($fp, $s);
         fclose($fp);
         
