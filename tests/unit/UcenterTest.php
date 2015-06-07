@@ -31,7 +31,7 @@ class UcenterTest extends \Codeception\TestCase\Test
             'connect'    => 'mysql',
             'dbhost'     => 'localhost',
             'dbuser'     => 'root',
-            'dbpw'       => 'root',
+            'dbpw'       => '',
             'dbname'     => 'ucenter',
             'dbconnect'  => '0',
             'dbcharset'  => 'utf8',
