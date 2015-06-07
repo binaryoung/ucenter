@@ -13,5 +13,5 @@ modules:
         Db:
             dsn: 'mysql:host=localhost;dbname=ucenter'
             user: 'root'
-            password: 'root'
+            password: ''
             dump: tests/_data/ucenter_dump.sql
