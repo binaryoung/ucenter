@@ -1,5 +1,7 @@
 ## Ucenter Service Provider For Laravel5
 
+###注意！！ 这个库并没有发布正式版本，所有的api都有可能在开发版本中变动。请等待1月中旬的正式版本和文档，谢谢您的关注！
+
 Ucenter Service Provider For Laravel5
 
 [![Latest Stable Version](https://poser.pugx.org/binaryoung/ucenter/v/stable)](https://packagist.org/packages/binaryoung/ucenter) [![Total Downloads](https://poser.pugx.org/binaryoung/ucenter/downloads)](https://packagist.org/packages/binaryoung/ucenter) [![Latest Unstable Version](https://poser.pugx.org/binaryoung/ucenter/v/unstable)](https://packagist.org/packages/binaryoung/ucenter) [![License](https://poser.pugx.org/binaryoung/ucenter/license)](https://packagist.org/packages/binaryoung/ucenter)
