@@ -3,3 +3,4 @@
 /tests/_output/*
 /src/uc_client/data/cache/hosts.php
 composer.lock
+.idea/
