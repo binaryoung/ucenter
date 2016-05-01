@@ -1,0 +1,3 @@
+[submodule "src/uc_client"]
+	path = src/uc_client
+	url = https://github.com/labs7in0/uc_client.git

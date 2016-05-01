@@ -1,35 +1,36 @@
-<?php namespace Binaryoung\Ucenter\Contracts;
+<?php
+
+namespace Binaryoung\Ucenter\Contracts;
 
 interface Api
 {
-   
-    public  function test();
+    public function test();
 
-    public  function deleteuser();
+    public function deleteuser();
 
-    public  function renameuser();
+    public function renameuser();
 
-    public  function updatepw();
+    public function updatepw();
 
-    public  function gettag();
+    public function gettag();
 
-    public  function synlogin();
+    public function synlogin();
 
-    public  function synlogout();
+    public function synlogout();
 
-    public  function updatebadwords();
+    public function updatebadwords();
 
-    public  function updatehosts();
+    public function updatehosts();
 
-    public  function updateapps();
+    public function updateapps();
 
-    public  function updateclient();
+    public function updateclient();
 
-    public  function updatecredit();
+    public function updatecredit();
 
-    public  function getcreditsettings();
+    public function getcreditsettings();
 
-    public  function updatecreditsettings();
+    public function updatecreditsettings();
 
-    public  function getcredit();
+    public function getcredit();
 }
