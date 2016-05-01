@@ -1,4 +1,6 @@
-<?php namespace Binaryoung\Ucenter\Facades;
+<?php
+
+namespace Binaryoung\Ucenter\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

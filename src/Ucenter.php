@@ -1,4 +1,6 @@
-<?php namespace Binaryoung\Ucenter;
+<?php
+
+namespace Binaryoung\Ucenter;
 
 use Config;
 
@@ -6,7 +8,6 @@ class Ucenter
 {
     public function __construct()
     {
-
         if (!defined('UC_DBHOST')) {
             $config = Config::get('ucenter');
             define('UC_CONNECT', $config['connect']);
@@ -18,14 +19,14 @@ class Ucenter
             define('UC_DBCHARSET', $config['dbcharset']);
             define('UC_DBTABLEPRE', $config['dbtablepre']);
             if (!defined('UC_KEY')) {
-            define('UC_KEY', $config['key']);
+                define('UC_KEY', $config['key']);
             }
             define('UC_API', $config['api']);
             define('UC_CHARSET', $config['charset']);
             define('UC_IP', $config['ip']);
             define('UC_APPID', $config['appid']);
             define('UC_PPP', $config['ppp']);
-            include __DIR__.'/uc_client/client.php';
+            include __DIR__ . '/uc_client/client.php';
         }
 
     }
@@ -35,7 +36,7 @@ class Ucenter
         if (function_exists($function)) {
             return call_user_func_array($function, $arguments);
         } else {
-            throw new Exception("function not exists");           
+            throw new Exception("function not exists");
         }
     }
 }
