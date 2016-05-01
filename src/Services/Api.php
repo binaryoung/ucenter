@@ -2,8 +2,6 @@
 
 namespace Binaryoung\Ucenter\Services;
 
-use Binaryoung\Ucenter\Services\Help;
-
 class Api implements \Binaryoung\Ucenter\Contracts\Api
 {
     use Help;
