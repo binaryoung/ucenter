@@ -67,7 +67,7 @@ trait Help{
     public static function serialize($arr, $htmlon = 0)
     {
         if (!function_exists('xml_serialize')) {
-            include API_ROOT.'uc_client/lib/xml.class.php';
+            include API_ROOT . 'uc_client/xml.class.php';
         }
         return xml_serialize($arr, $htmlon);
     }
@@ -75,7 +75,7 @@ trait Help{
     public static function unserialize($arr, $htmlon = 0)
     {
         if (!function_exists('xml_serialize')) {
-            include API_ROOT.'uc_client/lib/xml.class.php';
+            include API_ROOT . 'uc_client/xml.class.php';
         }
         return xml_unserialize($arr, $htmlon);
     }
