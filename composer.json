@@ -1,26 +1,32 @@
 {
     "name": "binaryoung/ucenter",
-    "description": "ucenter client for laravel",
+    "description": "Ucenter SDK for Laravel",
+    "keywords": [
+        "laravel",
+        "ucenter"
+    ],
     "license": "MIT",
     "authors": [
         {
             "name": "young",
-            "email": "admin@binaryoung.com",
-            "homepage": "http://binaryoung.com",
-            "role": "Developer"
+            "email": "i@xiayang.me",
+            "homepage": "http://xiayang.me"
         }
     ],
+    "require": {
+        "php": ">=5.6.4"
+    },
+    "require-dev": {},
     "autoload": {
         "psr-4": {
             "Binaryoung\\Ucenter\\": "src/"
         }
     },
-    "require": {
-        "php": ">=5.4.0"
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.0-dev"
+        }
     },
-    "require-dev": {
-        "codeception/codeception": "~2.0",
-        "mockery/mockery": "0.9.*",
-        "fzaninotto/faker": "~1.0"
-    }
+    "minimum-stability": "stable",
+    "prefer-stable": true
 }
