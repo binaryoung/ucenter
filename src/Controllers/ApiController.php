@@ -1,8 +1,9 @@
 <?php namespace Binaryoung\Ucenter\Controllers;
 
 use App\Http\Controllers\Controller;
-use Binaryoung\Ucenter\Contracts\Api;
-use Request,Config;
+use Binaryoung\Ucenter\Services\Api;
+use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Facades\Config;
 use Binaryoung\Ucenter\Services\Help;
 
 class ApiController extends Controller 

@@ -194,7 +194,7 @@ class Api implements \Binaryoung\Ucenter\Contracts\Api
         if (method_exists($this, $function)) {
             return call_user_func_array([$this, $function], $arguments);
         } else {
-            throw new Exception("function not exists");           
+            throw new \Exception("function not exists");
         }
     }
 }
